@@ -35,7 +35,7 @@
     ```
 2. 执行生成实现
     ```shell
-    ./genimpl.exe -f D:/workspace/test/manager.go
+    go run ./impl/genimpl.go -f D:/workspace/test/manager.go
     ```
 3. 会在指定的文件相同目录生成接口文件
     ```shell
@@ -53,7 +53,11 @@
         panic("implement me")
     }
     ```
-## 可以在golang中配置外部工具，然后就可以在文件上执行生成
-1. 打开配置页面 Settings -> Tools -> External Tools
-2. 新增外部工具
+## 可以在golang中配置外部工具，然后就可以在文件右键，选择外部工具，然后就可以生成代码了
+1. 生成可执行文件
+   ```go
+   go build ./impl/genimpl.go
+   ```
+2. 打开配置页面 Settings -> Tools -> External Tools
+3. 新增外部工具，执行可执行文件（放到系统Path下，可以不用写目录）
    ![img.png](docs/img.png)
